@@ -1,0 +1,12 @@
+h1 {
+    color: blue;
+    display: inline-block;
+    margin-right: 40px;
+}
+
+#tokyosales,#parissales {
+    color: crimson;
+}
+img {
+width: 200px;
+}
