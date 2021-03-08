@@ -91,9 +91,12 @@ function footerTable(){
         footerRaw.appendChild(tableFooter);
     tableFooter.innerText = 'Total';
     for (let i = 0; i <= workingHours.length; i++){
+        let sum=0;
+        for(let j=0;j<5;j++){
         let footerData = document.createElement('th');
             footerRaw.appendChild(footerData);
-            footerData.innerText=;
-}
-
+            sum+=+ Salmoncookies.dailySalesArr[j][i];
+            footerData.innerText=sum;
+        }   
+    }
 }
