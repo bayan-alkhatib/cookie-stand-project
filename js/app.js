@@ -24,7 +24,6 @@ function Salmoncookies(location, minCust_h, maxCust_h, avgCookie_cus) {
     this.render= function() {
         let raw = document.createElement('tr');
             branchesTable.appendChild(raw);
-            raw.setAttribute('class','tablestyle')
         let rawHeader = document.createElement('th');
             raw.appendChild(rawHeader);
             rawHeader.innerText=this.location;
