@@ -1,12 +1,16 @@
-h1 {
-    color: blue;
-    display: inline-block;
-    margin-right: 40px;
+table,tr,th,td {
+    border: solid;
+    border-collapse: collapse;
+    text-align: center;
+    width: 1000px;
+    font-size: large;
 }
 
-#tokyosales,#parissales {
-    color: crimson;
-}
 img {
 width: 200px;
+margin-bottom: 100px;
+}
+
+
+ 
 }

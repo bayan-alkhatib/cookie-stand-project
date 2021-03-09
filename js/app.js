@@ -7,7 +7,6 @@ function Salmoncookies(location, minCust_h, maxCust_h, avgCookie_cus) {
     this.avgCookie_cus = avgCookie_cus;
     this.dailySalesArr = [];
     this.total = 0;
-    this.sum = 
 
     this.custNum_h = function () {
         let max = this.maxCust_h;
@@ -23,9 +22,9 @@ function Salmoncookies(location, minCust_h, maxCust_h, avgCookie_cus) {
         }
     }
     this.render= function() {
-      
         let raw = document.createElement('tr');
             branchesTable.appendChild(raw);
+            raw.setAttribute('class','tablestyle')
         let rawHeader = document.createElement('th');
             raw.appendChild(rawHeader);
             rawHeader.innerText=this.location;
@@ -50,11 +49,16 @@ let paris = new Salmoncookies('paris', 20, 38, 2.3);
 paris.dailySales();
 let lima = new Salmoncookies('lima', 2, 16, 4.6);
 lima.dailySales();
+
 console.log(seattle, tokyo, dubai, paris, lima);
 
-let table = document.getElementById('seattlesales');
+let branchLocation= [seattle,tokyo,dubai,paris,lima];
+console.log(branchLocation);
+
+let table = document.getElementById('location_table');
 let branchesTable = document.createElement('table');
 table.appendChild(branchesTable);
+
 
 function headerTable() {
     let headRaw = document.createElement('tr');
@@ -68,7 +72,7 @@ function headerTable() {
     }
     tableHeader = document.createElement('th');
         headRaw.appendChild(tableHeader)
-        tableHeader.innerText = 'Total';
+        tableHeader.innerText = 'Daily Location Total';
 }
 headerTable();
 seattle.render();
@@ -77,26 +81,30 @@ dubai.render();
 paris.render();
 lima.render();
 footerTable();
-// for(let i=0;i<15;i++){
-//     let sum=seattle.render()[i]+tokyo.render()[i];
-// }
-// console.log (sum);
-// let Array=[seattle.dailySales(),tokyo.dailySales(),dubai.dailySales(),paris.dailySales(),lima.dailySales()];
-// console.log(Array);
 
 function footerTable(){
     let footerRaw = document.createElement('tr');
         branchesTable.appendChild(footerRaw);
     let tableFooter = document.createElement('th');
         footerRaw.appendChild(tableFooter);
-    tableFooter.innerText = 'Total';
-    for (let i = 0; i <= workingHours.length; i++){
-        let sum=0;
-        for(let j=0;j<5;j++){
-        let footerData = document.createElement('th');
-            footerRaw.appendChild(footerData);
-            sum+=+ Salmoncookies.dailySalesArr[j][i];
-            footerData.innerText=sum;
-        }   
+        tableFooter.innerText = 'Total';
+    let sum=0;
+    for (let i = 0; i <workingHours.length; i++){
+         for ( let j=0;j<branchLocation.length;j++){
+            sum+=branchLocation[j].dailySalesArr[i];
+            console.log(sum);
+        }
+         let footerData = document.createElement('th');
+         footerRaw.appendChild(footerData);
+         footerData.innerText=sum;
+         sum=0;  
     }
-}
+    for(let y=0; y<branchLocation.length;y++){
+        sum+=branchLocation[y].total;
+    }
+         let footerData = document.createElement('th');
+         footerRaw.appendChild(footerData);
+         footerData.innerText=sum;
+    }
+
+
