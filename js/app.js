@@ -92,6 +92,9 @@ function headerTable() {
 }
 
 
+// let footer=document.createElement('tfoot');
+// branchesTable.appendChild(footer);
+
 headerTable();
 seattle.render();
 tokyo.render();
@@ -103,7 +106,7 @@ footerTable();
 
 function footerTable(){
     let footerRaw = document.createElement('tr');
-        branchesTable.appendChild(footerRaw);
+     branchesTable.appendChild(footerRaw);
     let tableFooter = document.createElement('th');
         footerRaw.appendChild(tableFooter);
         tableFooter.innerText = 'Total';
