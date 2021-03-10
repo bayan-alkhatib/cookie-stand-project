@@ -11,5 +11,30 @@ width: 200px;
 margin-bottom: 100px;
 }
 
+form{
+    margin-bottom: 50px;
+}
+#style{
+    position: relative;
+     margin-left: 250px ;
+    
+}
 
- 
+label{
+    position: relative;
+    margin-left: 30px;
+}
+
+#cookies{
+    position: relative;
+    margin-left: 347px ;
+}
+
+input{
+    width: 200px;
+}
+
+#sub{
+    display: inline-block;
+
+}
