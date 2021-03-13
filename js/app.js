@@ -26,6 +26,7 @@ Salmoncookies.prototype.dailySales = function () {
         let cookiesSold_h = Math.ceil(this.avgCookie_cus * this.custNum_h());
         this.dailySalesArr.push(cookiesSold_h);
         this.total += this.dailySalesArr[i];
+        console.log(this.custNum_h());
     }
 }
 
@@ -79,10 +80,6 @@ function headerTable() {
         tableHeader.innerText = 'Daily Location Total';
 }
 
-
-// let footer=document.createElement('tfoot');
-// branchesTable.appendChild(footer);
-
 headerTable();
 seattle.render();
 tokyo.render();
@@ -91,13 +88,12 @@ paris.render();
 lima.render();
 
 ///////////////////////////////////////////////////////Table Footer Function///////////////////////
-let raw =document.createElement('tr');
+let footerRaw =document.createElement('tr');
 
 function footerTable(){
-   
-    table.appendChild(raw);
+
     let tableFooter = document.createElement('th');
-        raw.appendChild(tableFooter);
+        footerRaw.appendChild(tableFooter);
         tableFooter.innerText = 'Total';
     let sum=0;
     for (let i = 0; i <workingHours.length; i++){
@@ -105,7 +101,7 @@ function footerTable(){
             sum+=branchLocation[j].dailySalesArr[i];
         }
     let footerData = document.createElement('th');
-      raw.appendChild(footerData);
+      footerRaw.appendChild(footerData);
         footerData.innerText=sum;
         sum=0;  
     }
@@ -113,8 +109,9 @@ function footerTable(){
         sum+=branchLocation[y].total;
     }
     let footerData = document.createElement('th');
-       raw.appendChild(footerData);
+       footerRaw.appendChild(footerData);
         footerData.innerText=sum;
+        table.appendChild(footerRaw);
 }
 
 footerTable();
@@ -131,11 +128,12 @@ function addBranch(event){
     let newmaxCus= parseInt(event.target.maxCus_h.value);
     let newminCus= parseInt(event.target.minCus_h.value);
     let newBranch =new Salmoncookies(newLocation,newavgCookies,newmaxCus,newminCus);
-    table.removeChild(raw);
     newBranch.dailySales();
-   console.log(newBranch.dailySales());
-    // branchLocation.push(newBranch);
-    // console.log(newBranch,branchLocation)
+    console.log(newBranch.custNum_h());
+    branchLocation.push(newBranch);
     newBranch.render();
+    table.removeChild(footerRaw);
+    footerRaw =document.createElement('tr');
     footerTable();
 }
+
