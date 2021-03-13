@@ -1,0 +1,158 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+
+body{
+    background-color:#E9CFCE;
+    width: 100%;
+}
+
+header{
+    width:100%;
+    background-color:#CCB5BD;
+    padding:25px;
+    font-family:'Dancing Script', cursive;
+    margin-bottom:50px ;
+}
+
+header img {
+    width: 100px;
+    display: inline-block;
+    margin:0;
+    margin-right: 300px;
+    vertical-align: middle;
+}
+
+header ul{
+    display: inline-block;
+    vertical-align: middle;
+    padding-top: 0;
+}
+
+header ul li{
+    display: inline-block;
+    margin-right: 200px;
+    font-size: large;
+    font-weight: bold;
+}
+
+a{
+    text-decoration:none;
+    color:black
+}
+
+main{
+    position:relative;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+main h1{
+    font-size: xx-large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:rgb(59, 59, 59);
+}
+main p{
+    font-size:larger;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: ivory;
+}
+main img{
+    margin-top: 30px;
+    width: 100%;
+} 
+
+main section {
+    display: table;
+    width: 100% ;
+}
+main section img{
+    float:left;
+    width:33.33%;
+    padding-right:30px ;
+    height:50vh;
+}
+
+#secImg {
+    padding-right:0px;
+    padding-bottom:0; 
+}
+
+main div{
+    background-image:url(../img/imgs/frosted-cookie.jpg);
+    margin-top: 30px;
+    padding:50px;
+    background-repeat: round;
+}
+
+main div {
+    font-size: xx-large;
+    color: ivory;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+footer{
+    background-color:#CCB5BD;
+    padding:25px;
+    font-family:'Dancing Script', cursive;
+    margin-top: 40px;
+} 
+
+#vl1{
+border-left:white solid;
+height: 140px;
+margin-left: 80px;
+margin-right:40px ;
+padding-right:0;
+padding-left:0;
+display: inline-block;
+vertical-align: middle;
+}
+
+
+footer ul{
+    display:inline-block;
+    vertical-align: middle;
+    margin: 0;
+    padding:0;
+    width:11%
+}
+
+footer ul li {
+    margin-bottom:5px ;
+    text-align: center;
+}
+
+footer ul :first-child{
+    text-decoration:underline ;
+    color:white;
+    margin-bottom:20px ;
+    font-size: large;
+}
+
+#vl2{
+border-left:white solid;
+height: 140px;
+margin-left: 40px;
+margin-right:40px ;
+padding-right:0;
+padding-left:0;
+display: inline-block;
+vertical-align: middle;
+}
+
+#secondlist{
+margin-right:100px;
+}
+#vl3{
+border-left:white solid;
+height: 140px;
+margin-left: 40px;
+margin-right:40px ;
+padding-right:0;
+padding-left:0;
+display: inline-block;
+vertical-align: middle;
+}
