@@ -133,10 +133,9 @@ function addBranch(event){
     let newBranch =new Salmoncookies(newLocation,newavgCookies,newmaxCus,newminCus);
     table.removeChild(raw);
     newBranch.dailySales();
-   
+   console.log(newBranch.dailySales());
     // branchLocation.push(newBranch);
     // console.log(newBranch,branchLocation)
     newBranch.render();
-    
-    //footerTable();
+    footerTable();
 }

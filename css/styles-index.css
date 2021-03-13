@@ -17,7 +17,7 @@ header{
     margin-bottom:50px ;
 }
 
-img {
+header img {
     width: 100px;
     display: inline-block;
     margin:0;
@@ -50,6 +50,49 @@ main{
     margin-left: auto;
 }
 
+main h1{
+    font-size: xx-large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:rgb(59, 59, 59);
+}
+main p{
+    font-size:larger;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: ivory;
+}
+main img{
+    margin-top: 30px;
+    width: 100%;
+} 
+
+main section {
+    display: table;
+    width: 100% ;
+}
+main section img{
+    float:left;
+    width:33.33%;
+    padding-right:30px ;
+    height:50vh;
+}
+
+#secImg {
+    padding-right:0px;
+    padding-bottom:0; 
+}
+
+main div{
+    background-image:url(../img/imgs/frosted-cookie.jpg);
+    margin-top: 30px;
+    padding:50px;
+    background-repeat: round;
+}
+
+main div {
+    font-size: xx-large;
+    color: ivory;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 footer{
     background-color:#CCB5BD;
     padding:25px;
