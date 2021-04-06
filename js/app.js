@@ -138,7 +138,7 @@ function tosserHeaderTable(){
   }
   tableHeader = document.createElement('th');
   raw.appendChild(tableHeader);
-  tableHeader.innerText = 'Daily Location Total';
+  tableHeader.innerText = 'Daily Tossers Total';
 }
 
 ///////////////////////////////////////////////////////Table Footer Function///////////////////////
@@ -209,4 +209,4 @@ function addBranch(event){
   tosser_table.innerHTML='';
   tosserTable();
 }
-
+////////////////////////////////// Change Display //////////////////////////

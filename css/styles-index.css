@@ -55,6 +55,18 @@ main h1{
     font-family:'Dancing Script', cursive;
     color:rgb(59, 59, 59);
 }
+h1 span{
+    float:right;
+    width:15%;
+}
+h1 span button{
+    padding:10px;
+    border-radius:5px;
+    background-color: #CCB5BD;
+    color:white;
+    font-size:15px;
+}
+
 main p{
     font-size:larger;
     font-family: Georgia, 'Times New Roman', Times, serif;
