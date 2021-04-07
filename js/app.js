@@ -7,7 +7,6 @@ let avgCookie_cus=[6.3,1.2,3.7,2.3,4.6];
 let traffic=[0.5, 0.75, 1.0, 0.6, 0.8, 1.0, 0.7, 0.4, 0.6, 0.9, 0.7, 0.5, 0.3, 0.4];
 let customersServed_tosser=20;
 let table = document.getElementById('location_table');
-let footerRaw =document.createElement('tr');
 let branchForm = document.getElementById('newbranch');
 let tosser_table=document.getElementById('tosser_table');
 //////////////////////////////////////Constructer Function//////////////////////////////
@@ -125,7 +124,7 @@ function headerTable() {
   raw.appendChild(tableHeader);
   tableHeader.innerText = 'Daily Location Total';
 }
-
+/////////////////////////////////////////  Tosser Table Header Function///////////////////////////////////////////
 function tosserHeaderTable(){
   let raw = document.createElement('tr');
   tosser_table.appendChild(raw);
@@ -143,7 +142,7 @@ function tosserHeaderTable(){
 
 ///////////////////////////////////////////////////////Table Footer Function///////////////////////
 function footerTable(){
-
+  let footerRaw =document.createElement('tr');
   let tableFooter = document.createElement('th');
   footerRaw.appendChild(tableFooter);
   tableFooter.innerText = 'Total';
@@ -165,7 +164,7 @@ function footerTable(){
   footerData.innerText=sum;
   table.appendChild(footerRaw);
 }
-
+/////////////////////////////////////////////////////// Tosser Table Footer Function///////////////////////
 function tosserTableFooter(){
 
   let footerRaw =document.createElement('tr');
@@ -195,18 +194,27 @@ branchForm.addEventListener('submit',addBranch);
 
 function addBranch(event){
   event.preventDefault();
-  let newLocation = event.target.location.value;
-  let newavgCookies = parseInt(event.target.avgCookies.value);
-  let newmaxCus= parseInt(event.target.maxCus_h.value);
-  let newminCus= parseInt(event.target.minCus_h.value);
-  let newBranch =new Salmoncookies(newLocation,newavgCookies,newmaxCus,newminCus);
-  newBranch.dailySales();
-  console.log(newBranch.custNum_h());
-  newBranch.render();
-  table.removeChild(footerRaw);
-  footerRaw =document.createElement('tr');
-  footerTable();
+  if(locations.includes(event.target.location.value)){
+    for(let i=0;i< Salmoncookies.branchLocation.length;i++){
+      if(Salmoncookies.branchLocation[i].location===event.target.location.value){
+        avgCookie_cus[i]=parseInt(event.target.avgCookies.value);
+        maxCust_h[i]=parseInt(event.target.maxCus_h.value);
+        minCust_h[i]=parseInt(event.target.minCus_h.value);
+        Salmoncookies.branchLocation=[];
+        table.innerHTML='';
+        locationTable();
+      }
+    }
+  }else{
+    locations.push(event.target.location.value);
+    avgCookie_cus.push(parseInt(event.target.avgCookies.value));
+    maxCust_h.push(parseInt(event.target.maxCus_h.value));
+    minCust_h.push(parseInt(event.target.minCus_h.value));
+    Salmoncookies.branchLocation=[];
+    table.innerHTML=' ';
+    locationTable();
+  }
   tosser_table.innerHTML='';
   tosserTable();
 }
-////////////////////////////////// Change Display //////////////////////////
+
