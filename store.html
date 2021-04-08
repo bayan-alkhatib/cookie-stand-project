@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/store.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:wght@300&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><img src="./img/lab-06 logo fish.png" alt=""></li>
+                <li> <a href="./index.html"> Home</a></li>
+                <li> <a href="./sales.html">Sales</a></li>
+                <li> <a href="./store.html">Store</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <form id='form' >
+            <label for="name">Name</label>
+            <input type="text" name='name'>
+            <label for="phone">Phone</label>
+            <input type="number" name='phone'>
+            <label for="product">Our Cookies</label>
+            <select name="product" id="product">
+                <option value="doubleChocolate">double Chocolate Cookie</option>
+                <option value="milkChocolate">Milk Chocolate Cookie</option>
+                <option value="oatmealCookie">Oatmeal Cookie</option>
+                <option value="M&MsChocolate">M&Ms Chocolate Cookie</option>
+            </select>
+            <label for="quantity">Quantity</label>
+            <input type="number" name="quantity">
+            <label for="payment">Payment Method</label>
+                <select name="payment" id="payment">
+                    <option value="visa">Visa</option>
+                    <option value="mastercard">Master Card</option>
+                </select>
+            <div id='pmethod'>
+                <span>
+                    <label for="cardNum">Card Number</label>
+                    <input type="number" name='cardNum'>
+                </span>
+                <span>
+                    <label for="month">month</label>
+                    <input type="text" name='month'>
+                </span>
+                <span>
+                    <label for="year">year</label>
+                    <input type="text" name='year'>
+                </span>
+            </div >
+            <div id='location'>
+                <legend>Location</legend>
+                <label for="country">Country</label>
+                <input type="text" name='country'>
+                <label for="city">City</label>
+                <input type="text" name='city'>
+                <label for="zipCode">Zip Code</label>
+                <input type="text" name='zipCode'>
+                <label for="street">Street Name</label>
+                <input type="text" name='street'>
+            </div>      
+            <input type="submit" name="Order" value='Order'>
+        </form>
+    </main>
+    <footer>
+        &reg; Pat's Salmon Cookies
+        <div id="vl1"></div>
+        <ul>
+            <li>Locations</li>
+            <li>Seeatle</li>
+            <li>Tokyo</li>
+            <li>Dubai</li>
+            <li>Paris</li>
+            <li>Lima</li>
+        </ul>
+        <div id="vl2"></div>
+        <ul id="secondlist">
+            <li>Contacts</li>
+            <li>Email:info@patssalmoncookies.com</li>
+            <li>Phone:+96789741892</li>
+        </ul> 
+        <div id="vl3"></div>
+        <ul>
+            <li>Store Hours</li>
+            <li>Sunday-Thuresday</li>
+            <li>6:00-8:00</li>
+            <li>Friday</li>
+            <li>Closed</li>
+        </ul>  
+    </footer>
+    <script src='./js/store.js'></script>
+</body>
+</html>
